@@ -1,0 +1,211 @@
+[
+    {
+      "id": "kadesh",
+      "name": "Kadesh",
+      "faction": "neutral",
+      "width": 300,
+      "height": 300,
+      "unlockedBy": "start",
+      "portals": [
+        { "target": "scrap_haven", "x": 60, "y": 250 },
+        { "target": "shatterdust_pub", "x": 240, "y": 250 },
+        { "target": "comms_array", "x": 150, "y": 50 },
+        { "target": "relay_tower", "x": 30, "y": 120 },
+        { "target": "neural_spire", "x": 270, "y": 100 },
+        { "target": "resistance_camp", "x": 80, "y": 200 },
+        { "target": "forgotten_port", "x": 270, "y": 270 },
+        { "target": "battle_zone", "x": 150, "y": 20 }
+      ]
+    },
+    {
+      "id": "scrap_haven",
+      "name": "Scrap Haven",
+      "faction": "neutral",
+      "width": 200,
+      "height": 200,
+      "unlockedBy": "start",
+      "portals": [
+        { "target": "kadesh", "x": 100, "y": 20 }
+      ]
+    },
+    {
+      "id": "shatterdust_pub",
+      "name": "Shatterdust Pub",
+      "faction": "neutral",
+      "width": 200,
+      "height": 200,
+      "unlockedBy": "after visiting CommsArray",
+      "portals": [
+        { "target": "kadesh", "x": 100, "y": 20 }
+      ]
+    },
+    {
+      "id": "forgotten_port",
+      "name": "Forgotten Port",
+      "faction": "neutral",
+      "width": 240,
+      "height": 160,
+      "unlockedBy": "via rumor in Shatterdust",
+      "portals": [
+        { "target": "kadesh", "x": 120, "y": 10 }
+      ]
+    },
+    {
+      "id": "relay_tower",
+      "name": "Relay Tower Theta-9",
+      "faction": "human",
+      "width": 180,
+      "height": 180,
+      "unlockedBy": "Mission 2",
+      "portals": [
+        { "target": "kadesh", "x": 150, "y": 90 },
+        { "target": "resistance_camp", "x": 30, "y": 90 }
+      ]
+    },
+    {
+      "id": "resistance_camp",
+      "name": "Resistance Camp Harkin",
+      "faction": "human",
+      "width": 240,
+      "height": 240,
+      "unlockedBy": "side with Humans in Mission 1 or 5",
+      "portals": [
+        { "target": "kadesh", "x": 150, "y": 30 },
+        { "target": "relay_tower", "x": 210, "y": 100 },
+        { "target": "fortress_yard", "x": 20, "y": 150 },
+        { "target": "broadcast_tower", "x": 150, "y": 230 },
+        { "target": "battle_zone", "x": 120, "y": 20 }
+      ]
+    },
+    {
+      "id": "fortress_yard",
+      "name": "Fortress Yard 32",
+      "faction": "human",
+      "width": 200,
+      "height": 200,
+      "unlockedBy": "after Human Mission: Bloodline",
+      "portals": [
+        { "target": "resistance_camp", "x": 180, "y": 50 }
+      ]
+    },
+    {
+      "id": "broadcast_tower",
+      "name": "Broadcast Tower",
+      "faction": "human",
+      "width": 200,
+      "height": 200,
+      "unlockedBy": "after Human Mission: Analog Salvation",
+      "portals": [
+        { "target": "resistance_camp", "x": 100, "y": 10 }
+      ]
+    },
+    {
+      "id": "neural_spire",
+      "name": "Neural Spire",
+      "faction": "enhanced",
+      "width": 280,
+      "height": 280,
+      "unlockedBy": "side with Enhanced in Mission 1 or 5",
+      "portals": [
+        { "target": "kadesh", "x": 10, "y": 140 },
+        { "target": "neurolab", "x": 260, "y": 80 },
+        { "target": "tower_synex", "x": 260, "y": 180 },
+        { "target": "ai_hub", "x": 260, "y": 30 },
+        { "target": "battle_zone", "x": 100, "y": 10 }
+      ]
+    },
+    {
+      "id": "neurolab",
+      "name": "NeuroLoom Lab 8",
+      "faction": "enhanced",
+      "width": 200,
+      "height": 200,
+      "unlockedBy": "after Enhanced Mission: Codeborn",
+      "portals": [
+        { "target": "neural_spire", "x": 10, "y": 100 }
+      ]
+    },
+    {
+      "id": "tower_synex",
+      "name": "Tower Synex",
+      "faction": "enhanced",
+      "width": 200,
+      "height": 200,
+      "unlockedBy": "after Enhanced Mission: Clean Sweep",
+      "portals": [
+        { "target": "neural_spire", "x": 10, "y": 100 }
+      ]
+    },
+    {
+      "id": "ai_hub",
+      "name": "Inner AI Council Hall",
+      "faction": "enhanced",
+      "width": 180,
+      "height": 180,
+      "unlockedBy": "after Enhanced Mission: Singularity Step",
+      "portals": [
+        { "target": "neural_spire", "x": 10, "y": 90 }
+      ]
+    },
+    {
+      "id": "comms_array",
+      "name": "Comms Array",
+      "faction": "contested",
+      "width": 220,
+      "height": 220,
+      "unlockedBy": "Mission 5",
+      "portals": [
+        { "target": "kadesh", "x": 100, "y": 200 },
+        { "target": "graveyard", "x": 200, "y": 40 }
+      ]
+    },
+    {
+      "id": "graveyard",
+      "name": "Synthetic Graveyard",
+      "faction": "contested",
+      "width": 220,
+      "height": 220,
+      "unlockedBy": "after Mission 5",
+      "portals": [
+        { "target": "comms_array", "x": 20, "y": 180 },
+        { "target": "blacksite", "x": 100, "y": 10 }
+      ]
+    },
+    {
+      "id": "blacksite",
+      "name": "Deep Desert Blacksite",
+      "faction": "special",
+      "width": 200,
+      "height": 160,
+      "unlockedBy": "Mission 9",
+      "portals": [
+        { "target": "graveyard", "x": 90, "y": 150 },
+        { "target": "first_core", "x": 120, "y": 10 }
+      ]
+    },
+    {
+      "id": "first_core",
+      "name": "First AI Core Ruins",
+      "faction": "special",
+      "width": 220,
+      "height": 160,
+      "unlockedBy": "Final Mission (Mission 10)",
+      "portals": [
+        { "target": "blacksite", "x": 100, "y": 140 }
+      ]
+    },
+    {
+      "id": "battle_zone",
+      "name": "Battle Zone / Crater",
+      "faction": "contested",
+      "width": 280,
+      "height": 240,
+      "unlockedBy": "Mission 8 (The Fracture Line)",
+      "portals": [
+        { "target": "resistance_camp", "x": 30, "y": 200 },
+        { "target": "neural_spire", "x": 250, "y": 180 },
+        { "target": "kadesh", "x": 140, "y": 10 }
+      ]
+    }
+  ]
+  

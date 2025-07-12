@@ -1,75 +1,76 @@
-import { Sprite }  from 'pixi.js';
-import { Game } from '../app';
+import { AnimatedSprite, Assets, Spritesheet, Texture } from 'pixi.js';
+import { MovementBounds, MovementController } from '../system/movement.controller';
+import { AnimationConfig, AnimationManager } from '../system/animation.manager';
 
-export class Character {
-    protected _sprite: Sprite;
-    protected _speed: number;
-    protected _color: number;
+export abstract class Character {
+    protected _sprite: AnimatedSprite;
+    protected _movementController: MovementController;
+    protected _animationManager: AnimationManager;
 
-    protected _width: number = 50;
-    protected _height: number = 50;
-
-    constructor(x = 0, y = 0, color = 0x3498db) {
-        this._sprite = new Sprite();
-        this._speed = 3;
-        this._color = color;
+    constructor(x: number = 0, y: number = 0, speed: number = 1) {
+        this._sprite = new AnimatedSprite([Texture.EMPTY]);
+        this._sprite.anchor.set(0.5);
         
-        this.createSprite();
-    //    this.setPosition(x, y);
-    }
-    
-    get sprite(): Sprite {
-        return this._sprite;
+        this._movementController = new MovementController(this._sprite, x, y, speed);
+        this._animationManager = new AnimationManager(this._sprite, this.getAnimationConfig());
+        
+        this.createFallbackSprite();
     }
 
-    get speed(): number {
-        return this._speed;
+    get sprite(): AnimatedSprite { return this._sprite; }
+    get position() { return this._movementController.state; }
+    get animationManager() { return this._animationManager; }
+    get movementController() { return this._movementController; }
+
+    abstract getAnimationConfig(): AnimationConfig;
+    abstract update(bounds: MovementBounds, otherCharacters: Character[]): void;
+
+    protected createFallbackSprite() {
+        const canvas = document.createElement('canvas');
+        canvas.width = 64;
+        canvas.height = 64;
+        const ctx = canvas.getContext('2d')!;
+        
+        ctx.fillStyle = '#e74c3c';
+        ctx.fillRect(0, 0, 64, 64);
+        ctx.fillStyle = '#f39c12';
+        ctx.fillRect(16, 8, 32, 24);
+        
+        const texture = Texture.from(canvas);
+        this._sprite.textures = [texture];
     }
 
-    get color(): number {
-        return this._color;
-    }
-
-    get width(): number {
-        return this._width;
-    }
-
-    get height(): number {
-        return this._height;
-    }
-
-
-    createSprite() {
-      
-    }
-    
-    setPosition(x: number, y: number) {
-        this.sprite.x = x;
-        this.sprite.y = y;
-    }
-    
-    getPosition() {
+    getPosition(): { x: number; y: number } {
         return { x: this.sprite.x, y: this.sprite.y };
     }
     
-    move(dx: number, dy: number, game: Game) {
-        const newX = this.sprite.x + dx * this.speed;
-        const newY = this.sprite.y + dy * this.speed;
-        
-        // Keep character within bounds
-        const bounds = game.getGameBounds();
-        this.sprite.x = Math.max(25, Math.min(bounds.width - 25, newX));
-        this.sprite.y = Math.max(25, Math.min(bounds.height - 25, newY));
-    }
-    
-    update(game: Game) {
-        this.sprite.y += Math.sin(Date.now() * 0.002 + this.sprite.x * 0.01) * 0.5;
-    }
-    
-    destroy() {
-        if (this.sprite.parent) {
-            this.sprite.parent.removeChild(this.sprite);
+    async loadSpritesheet(spritesheetPath: string, jsonPath: string) {
+        try {
+            const [texture, data] = await Promise.all([
+                Assets.load(spritesheetPath),
+                Assets.load(jsonPath)
+            ]);
+            
+            const spritesheet = new Spritesheet(texture, data.data);
+            await spritesheet.parse();
+            
+            this._animationManager.setSpritesheet(spritesheet);
+            
+            // Replace sprite textures with idle animation
+            if (spritesheet.animations.idle_down) {
+                this._sprite.textures = spritesheet.animations.idle_down;
+                this._sprite.play();
+            }
+            
+        } catch (error) {
+            console.error('Failed to load spritesheet:', error);
         }
-        this.sprite.destroy();
+    }
+
+    destroy() {
+        if (this._sprite.parent) {
+            this._sprite.parent.removeChild(this._sprite);
+        }
+        this._sprite.destroy();
     }
 }

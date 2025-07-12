@@ -1,45 +1,41 @@
 import { Application } from "pixi.js";
-
+import { initDevtools } from "@pixi/devtools";
+import { MovementBounds } from "./system/movement.controller";
+import { InputManager } from "./system/input.manager";
 import { Scene } from "./scene/scene";
 import { Player } from "./character/player";
-import { initDevtools } from "@pixi/devtools";
+import { LocationManager } from "./location/location.manager";
+import { MapOverlay } from "./ui/map";
 
-export  class Game {
-
+export class Game {
     private _app: Application;
-
-    private _scene?: Scene;
-
+    private _inputManager: InputManager;
+    private scene: Scene;
     private _player: Player;
-
     private _isLoaded: boolean = false;
+
+    private locationManager: LocationManager;
+
+    private mapOverlay: MapOverlay;
+
+    private keys: any = {};
 
     constructor() {
         this._app = new Application();
-        this._player = new Player(100, 100);
-    }
-    
-    get app(): Application {
-        return this._app;
+        this._inputManager = new InputManager();
+        this._player = new Player(100, 100, this._inputManager);
+
+        this.locationManager = new LocationManager();
+        this.scene = new Scene(this, this.locationManager);
+        this.mapOverlay = new MapOverlay(this);
     }
 
-    get scene(): Scene | undefined {
-        return this._scene;
-    }
-
-    get player(): Player {
-        return this._player;
-    }
+    get app(): Application { return this._app; }
+    get player(): Player { return this._player; }
+    get inputManager(): InputManager { return this._inputManager; }
 
     dev(): Game {
         initDevtools({ app: this.app });
-  
-        return this;
-    }
-
-    setScene(scene: Scene): Game {
-        this._scene = scene;
-
         return this;
     }
 
@@ -50,42 +46,59 @@ export  class Game {
             backgroundColor: 0x1abc9c,
             antialias: true,
         });
+        
 
+        
+        await this.mapOverlay.init();
+        await this.locationManager.loadFromFile('/assets/locations.json');
         await this._player.loadSpritesheet('/assets/player/spritesheet.png', '/assets/player/spritesheet.json');
         
+        await this.scene.init();
         document.getElementById('game-container')!.appendChild(this._app.canvas);
-        
         this._app.stage.addChild(this._player.sprite);
 
         this._isLoaded = true;
-
         this.setupGameLoop();
+        this.handleInput();
     }
-    
-    setupGameLoop() {
-        this.app.ticker.add((ticker) => {
-            this.update();
+
+    private setupGameLoop() {
+        this.app.ticker.add(() => {
+            if (this.scene && this._isLoaded) {
+                this.scene.update();
+            }
         });
     }
-    
-    update() {
-        if (this.scene && this._isLoaded) {
-            this.scene!.update();
-        }
-    }
-    
 
-    getGameBounds() {
+    private handleInput() {
+        window.addEventListener('keydown', (e) => {
+            this.keys[e.code] = true;
+            
+            // Handle map toggle
+            if (e.key.toLowerCase() === 'x') {
+                this.mapOverlay.toggle();
+                // Update player's map state
+             //   this.player.setMapOpen(this.mapOverlay.isVisible);
+                e.preventDefault();
+            }
+        });
+        
+        window.addEventListener('keyup', (e) => {
+            this.keys[e.code] = false;
+        });
+    }
+
+    getGameBounds(): MovementBounds {
         return {
             width: this.app.screen.width,
             height: this.app.screen.height
         };
     }
-    
+
     destroy() {
-        if (this.scene) {
-            this.scene!.destroy();
-        }
-        this.app.destroy();
+        this.scene?.destroy();
+        this._inputManager.destroy();
+        this._player.destroy();
+        this._app.destroy();
     }
 }
