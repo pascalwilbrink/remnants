@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "colyseus": "^0.16.4",
+    "colyseus-monitor": "^0.4.4",
+    "matter-js": "^0.20.0"
+  },
+  "devDependencies": {
+    "@types/matter-js": "^0.19.8"
+  }
+}

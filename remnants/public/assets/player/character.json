@@ -1,0 +1,176 @@
+{
+  "bodyTypeName": "male",
+  "url": "https://liberatedpixelcup.github.io/Universal-LPC-Spritesheet-Character-Generator/#?body=Body_color_amber&head=Human_male_gaunt_amber&sex=male&wound_brain=none_Brain&wound_eye_left=none_Left_Eye&wound_mouth=none_Mouth&tail=none_Fluffy_Wolf_Tail&wings=none_Lizard_Wings_%28Alt_Colors%29&expression=Angry_amber&eye_color=none_Eye_Color&eyebrows=Thin_Eyebrows_dark_brown&beard=Medium_Beard_dark_brown&mustache=Mustache_dark_brown&hair=Spiked_light_brown&facial_eyes=Eyepatch_Ambidextrous_black&gloves=none_Gloves&sash_tie=none_Obi_Knot_Left&sash=none_Obi&legs=Pants_bluegray&shoes=Basic_Shoes_red&clothes=Shortsleeve_Cardigan_sky",
+  "spritesheets": "https://liberatedpixelcup.github.io/Universal-LPC-Spritesheet-Character-Generator/spritesheets/",
+  "version": 1,
+  "datetime": "11/07/2025, 19:26:57",
+  "credits": [
+    {
+      "fileName": "body/bodies/male/amber.png",
+      "licenses": "OGA-BY 3.0,CC-BY-SA 3.0,GPL 3.0",
+      "authors": "bluecarrot16,JaidynReiman,Benjamin K. Smith (BenCreating),Evert,Eliza Wyatt (ElizaWy),TheraHedwig,MuffinElZangano,Durrani,Johannes Sjölund (wulax),Stephen Challener (Redshrike)",
+      "urls": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles,https://opengameart.org/content/lpc-medieval-fantasy-character-sprites,https://opengameart.org/content/lpc-male-jumping-animation-by-durrani,https://opengameart.org/content/lpc-runcycle-and-diagonal-walkcycle,https://opengameart.org/content/lpc-revised-character-basics,https://opengameart.org/content/lpc-be-seated,https://opengameart.org/content/lpc-runcycle-for-male-muscular-and-pregnant-character-bases-with-modular-heads,https://opengameart.org/content/lpc-jump-expanded,https://opengameart.org/content/lpc-character-bases",
+      "notes": "see details at https://opengameart.org/content/lpc-character-bases; 'Thick' Male Revised Run/Climb by JaidynReiman (based on ElizaWy's LPC Revised)"
+    },
+    {
+      "fileName": "head/heads/human/male_gaunt/amber.png",
+      "licenses": "OGA-BY 3.0,CC-BY-SA 3.0,GPL 3.0",
+      "authors": "Stephen Challener (Redshrike),bluecarrot16",
+      "urls": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles,https://opengameart.org/content/lpc-folk",
+      "notes": "original head by Redshrike, gaunt version by bluecarrot16"
+    },
+    {
+      "fileName": "head/faces/male/anger/amber.png",
+      "licenses": "OGA-BY 3.0",
+      "authors": "JaidynReiman,ElizaWy,Stephen Challener (Redshrike)",
+      "urls": "https://github.com/ElizaWy/LPC/tree/main/Characters/Head,https://opengameart.org/content/ulpc-expanded-expressions",
+      "notes": "Original by Redshrike, Expressions by ElizaWy, mapped to all frames by JaidynReiman"
+    },
+    {
+      "fileName": "eyes/eyebrows/thin/adult/dark_brown.png",
+      "licenses": "OGA-BY 3.0",
+      "authors": "ElizaWy",
+      "urls": "https://github.com/ElizaWy/LPC/tree/main/Characters/Hair,https://opengameart.org/content/lpc-expanded-sit-run-jump-more",
+      "notes": ""
+    },
+    {
+      "fileName": "beards/beard/medium/dark_brown.png",
+      "licenses": "OGA-BY 3.0",
+      "authors": "ElizaWy",
+      "urls": "https://github.com/ElizaWy/LPC/tree/main/Characters/Hair,https://opengameart.org/content/lpc-expanded-sit-run-jump-more",
+      "notes": ""
+    },
+    {
+      "fileName": "beards/mustache/basic/dark_brown.png",
+      "licenses": "CC-BY-SA 3.0,GPL 3.0",
+      "authors": "JaidynReiman,Carlo Enrico Victoria (Nemisys)",
+      "urls": "https://opengameart.org/content/lpc-brunet-mustache",
+      "notes": "Original by Nemisys, repositioning by JaidynReiman."
+    },
+    {
+      "fileName": "hair/spiked/adult/light_brown.png",
+      "licenses": "CC-BY 4.0",
+      "authors": "kcilds/Rocetti/Eredah",
+      "urls": "https://opengameart.org/content/eredah-rpg-character-base-48x64-ongoing,https://opengameart.org/content/lpc-hair",
+      "notes": ""
+    },
+    {
+      "fileName": "facial/patches/eyepatch/ambi/adult/black.png",
+      "licenses": "OGA-BY 3.0,GPL 3.0",
+      "authors": "bluecarrot16",
+      "urls": "https://opengameart.org/content/lpc-pirates,https://opengameart.org/content/lpc-expanded-hats-facial-helmets",
+      "notes": ""
+    },
+    {
+      "fileName": "torso/clothes/shortsleeve/shortsleeve_cardigan/male/sky.png",
+      "licenses": "OGA-BY 3.0",
+      "authors": "ElizaWy,JaidynReiman,Stephen Challener (Redshrike),Johannes Sjölund (wulax)",
+      "urls": "https://github.com/ElizaWy/LPC/tree/main/Characters/Clothing,https://opengameart.org/content/lpc-expanded-simple-shirts",
+      "notes": "original by ElizaWy; shortsleeve cardigan adapted from original by JaidynReiman"
+    },
+    {
+      "fileName": "legs/pants/male/bluegray.png",
+      "licenses": "OGA-BY 3.0,GPL 3.0,CC-BY-SA 3.0",
+      "authors": "bluecarrot16,JaidynReiman,ElizaWy,Matthew Krohn (makrohn),Johannes Sjölund (wulax),Stephen Challener (Redshrike)",
+      "urls": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles,https://opengameart.org/content/lpc-medieval-fantasy-character-sprites,https://opengameart.org/content/lpc-expanded-pants",
+      "notes": "original male pants by wulax, recolors and edits to v3 base by bluecarrot16, climb/jump/run/sit/emotes/revised combat by JaidynReiman based on ElizaWy's LPC Revised"
+    },
+    {
+      "fileName": "feet/shoes/basic/male/red.png",
+      "licenses": "OGA-BY 3.0,CC-BY-SA 3.0,GPL 3.0",
+      "authors": "JaidynReiman,bluecarrot16,Johannes Sjölund (wulax)",
+      "urls": "https://opengameart.org/content/lpc-medieval-fantasy-character-sprites,http://opengameart.org/content/lpc-clothing-updates,https://opengameart.org/content/lpc-expanded-socks-shoes",
+      "notes": "original by wulax, edited for v3 base by bluecarrot16, Jump/Sit/Emote/Run/Revised Combat by JaidynReiman"
+    }
+  ],
+  "layers": [
+    {
+      "fileName": "body/bodies/male/amber.png",
+      "zPos": 10,
+      "parentName": "body",
+      "name": "Body_color",
+      "variant": "amber",
+      "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering,idle,jump,run,sit,emote,climb,combat,1h_slash,1h_backslash,1h_halfslash"
+    },
+    {
+      "fileName": "feet/shoes/basic/male/red.png",
+      "zPos": 15,
+      "parentName": "shoes",
+      "name": "Basic_Shoes",
+      "variant": "red",
+      "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering,idle,jump,run,sit,emote,climb,combat,1h_slash,1h_backslash,1h_halfslash"
+    },
+    {
+      "fileName": "legs/pants/male/bluegray.png",
+      "zPos": 20,
+      "parentName": "legs",
+      "name": "Pants",
+      "variant": "bluegray",
+      "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering,idle,jump,run,sit,emote,climb,combat,1h_slash,1h_backslash,1h_halfslash"
+    },
+    {
+      "fileName": "torso/clothes/shortsleeve/shortsleeve_cardigan/male/sky.png",
+      "zPos": 35,
+      "parentName": "clothes",
+      "name": "Shortsleeve_Cardigan",
+      "variant": "sky",
+      "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering,idle,jump,run,sit,emote,climb,combat,1h_slash,1h_backslash,1h_halfslash"
+    },
+    {
+      "fileName": "head/heads/human/male_gaunt/amber.png",
+      "zPos": 100,
+      "parentName": "head",
+      "name": "Human_male_gaunt",
+      "variant": "amber",
+      "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering,idle,jump,run,sit,emote,climb,combat,1h_slash,1h_backslash,1h_halfslash"
+    },
+    {
+      "fileName": "head/faces/male/anger/amber.png",
+      "zPos": 101,
+      "parentName": "expression",
+      "name": "Angry",
+      "variant": "amber",
+      "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering,idle,jump,run,sit,emote,climb,combat,1h_slash,1h_backslash,1h_halfslash"
+    },
+    {
+      "fileName": "eyes/eyebrows/thin/adult/dark_brown.png",
+      "zPos": 106,
+      "parentName": "eyebrows",
+      "name": "Thin_Eyebrows",
+      "variant": "dark brown",
+      "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering,idle,jump,run,sit,emote,climb,combat,1h_slash,1h_backslash,1h_halfslash"
+    },
+    {
+      "fileName": "beards/beard/medium/dark_brown.png",
+      "zPos": 110,
+      "parentName": "beard",
+      "name": "Medium_Beard",
+      "variant": "dark brown",
+      "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering,idle,jump,run,sit,emote,climb,combat,1h_slash,1h_backslash,1h_halfslash"
+    },
+    {
+      "fileName": "beards/mustache/basic/dark_brown.png",
+      "zPos": 111,
+      "parentName": "mustache",
+      "name": "Mustache",
+      "variant": "dark brown",
+      "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering,idle,jump,run,sit,emote,climb,combat,1h_slash,1h_backslash,1h_halfslash"
+    },
+    {
+      "fileName": "facial/patches/eyepatch/ambi/adult/black.png",
+      "zPos": 115,
+      "parentName": "facial_eyes",
+      "name": "Eyepatch_Ambidextrous",
+      "variant": "black",
+      "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering,idle,jump,run,sit,emote,climb,combat,1h_slash,1h_backslash,1h_halfslash"
+    },
+    {
+      "fileName": "hair/spiked/adult/light_brown.png",
+      "zPos": 120,
+      "parentName": "hair",
+      "name": "Spiked",
+      "variant": "light brown",
+      "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering,idle,jump,run,sit,emote,climb,combat,1h_slash,1h_backslash,1h_halfslash"
+    }
+  ]
+}
